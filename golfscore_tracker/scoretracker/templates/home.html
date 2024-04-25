@@ -1,0 +1,11 @@
+<!-- templates/scoretracker/home.html -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Scores</h2>
+<ul>
+    {% for score in scores %}
+    <li>{{ score.user.username }}: {{ score.course_name }} on {{ score.date }} - Scores: {{ score.scores }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_score' %}">Add New Score</a>
+{% endblock %}
