@@ -3,9 +3,11 @@ from .models import Score
 from .forms import ScoreForm
 from django.contrib.auth.decorators import login_required
 
+
 def home(request):
     scores = Score.objects.all()
     return render(request, 'scoretracker/home.html', {'scores': scores})
+
 
 @login_required
 def add_score(request):
